@@ -1,0 +1,2146 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A database of optimal on-lattice quadrature rules for Hermite integration">
+      
+      
+        <meta name="author" content="Pakorn Wongwaitayakornkul">
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../methods/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+    
+    
+      
+        <title>Background - Optimal Hermite Lattices</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mathematical-background" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Optimal Hermite Lattices" class="md-header__button md-logo" aria-label="Optimal Hermite Lattices" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Optimal Hermite Lattices
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Background
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="deep-purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Background
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../methods/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Methods
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../catalog/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Lattice Catalog
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../lattices/D1Q3/" class="md-tabs__link">
+          
+  
+  
+  1D Lattices
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../lattices/D2Q9/" class="md-tabs__link">
+          
+  
+  
+  2D Lattices
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../lattices/D3Q15/" class="md-tabs__link">
+          
+  
+  
+  3D Lattices
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Optimal Hermite Lattices" class="md-nav__button md-logo" aria-label="Optimal Hermite Lattices" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Optimal Hermite Lattices
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Background
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Background
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-gausshermite-integration-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Gauss–Hermite integration problem
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hermite-polynomials-the-multivariate-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hermite polynomials — the multivariate version
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hermite polynomials — the multivariate version">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1d-probabilists-hermite-polynomials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1D probabilist's Hermite polynomials
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multivariate-tensorial-hermite-polynomials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multivariate (tensorial) Hermite polynomials
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-lattice-constraint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The lattice constraint
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connection-to-the-lattice-boltzmann-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connection to the lattice Boltzmann method
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#symmetry-and-lattice-shells" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Symmetry and lattice shells
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../methods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../catalog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lattice Catalog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1D Lattices
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    1D Lattices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D1Q3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D1Q3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D1Q7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D1Q7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D1Q11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D1Q11
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D1Q15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D1Q15
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D1Q17/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D1Q17
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D1Q21/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D1Q21
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D1Q25/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D1Q25
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D1Q27/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D1Q27
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D1Q27a/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D1Q27a
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D1Q29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D1Q29
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2D Lattices
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2D Lattices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D2Q9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D2Q9
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D2Q17a/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D2Q17a
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D2Q17b/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D2Q17b
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D2Q17c/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D2Q17c
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D2Q17d/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D2Q17d
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D2Q37/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D2Q37
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D2Q49a/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D2Q49a
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D2Q49b/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D2Q49b
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D2Q49c/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D2Q49c
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D2Q49d/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D2Q49d
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D2Q49e/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D2Q49e
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D2Q49f/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D2Q49f
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D2Q49g/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D2Q49g
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D2Q49h/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D2Q49h
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D2Q49i/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D2Q49i
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D2Q77/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D2Q77
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D2Q137/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D2Q137
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D2Q205/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D2Q205
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D2Q293/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D2Q293
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D2Q353/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D2Q353
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D2Q413/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D2Q413
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3D Lattices
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3D Lattices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D3Q15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D3Q15
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D3Q103/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D3Q103
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D3Q327/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D3Q327
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D3Q675/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D3Q675
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-gausshermite-integration-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Gauss–Hermite integration problem
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hermite-polynomials-the-multivariate-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hermite polynomials — the multivariate version
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hermite polynomials — the multivariate version">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1d-probabilists-hermite-polynomials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1D probabilist's Hermite polynomials
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multivariate-tensorial-hermite-polynomials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multivariate (tensorial) Hermite polynomials
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-lattice-constraint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The lattice constraint
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connection-to-the-lattice-boltzmann-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connection to the lattice Boltzmann method
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#symmetry-and-lattice-shells" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Symmetry and lattice shells
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="mathematical-background">Mathematical Background<a class="headerlink" href="#mathematical-background" title="Permanent link">&para;</a></h1>
+<p>This page introduces the mathematical framework behind optimal Hermite lattice quadrature. The key idea: choose a set of <strong>equally-spaced points on a Cartesian grid</strong> that can exactly reproduce the moments of a Gaussian-weighted polynomial — the building blocks of kinetic theory.</p>
+<hr />
+<h2 id="the-gausshermite-integration-problem">The Gauss–Hermite integration problem<a class="headerlink" href="#the-gausshermite-integration-problem" title="Permanent link">&para;</a></h2>
+<p>We want to approximate integrals of the form</p>
+<div class="arithmatex">\[
+\int_{\mathbb{R}^d} f(\boldsymbol{\xi})\, \omega(\boldsymbol{\xi})\, d\boldsymbol{\xi}
+\]</div>
+<p>where <span class="arithmatex">\(\omega\)</span> is the standard <span class="arithmatex">\(d\)</span>-dimensional Gaussian weight</p>
+<div class="arithmatex">\[
+\omega(\boldsymbol{\xi}) = \frac{1}{(2\pi)^{d/2}} \exp\!\left(-\frac{|\boldsymbol{\xi}|^2}{2}\right).
+\]</div>
+<p>The classical <em>Gauss–Hermite quadrature</em> picks <span class="arithmatex">\(n\)</span> nodes and weights <span class="arithmatex">\(\{(\boldsymbol{\xi}_a, w_a)\}\)</span> so that</p>
+<div class="arithmatex">\[
+\int_{\mathbb{R}^d} f(\boldsymbol{\xi})\, \omega(\boldsymbol{\xi})\, d\boldsymbol{\xi} = \sum_{a=1}^{n} w_a\, f(\boldsymbol{\xi}_a)
+\]</div>
+<p>holds exactly whenever <span class="arithmatex">\(f\)</span> is a polynomial up to some degree <span class="arithmatex">\(N\)</span>. In 1D, the optimal <span class="arithmatex">\(n\)</span>-point Gauss–Hermite rule is exact for polynomials of degree up to <span class="arithmatex">\(2n - 1\)</span>, with nodes at the roots of the probabilist's Hermite polynomial <span class="arithmatex">\(\text{He}_n(\xi)\)</span>.</p>
+<div class="admonition info">
+<p class="admonition-title">Why Hermite polynomials?</p>
+<p>Hermite polynomials are the orthogonal polynomial family with respect to the Gaussian weight. They form a natural basis for expanding distribution functions in kinetic theory — particularly the Maxwell–Boltzmann equilibrium distribution.</p>
+</div>
+<hr />
+<h2 id="hermite-polynomials-the-multivariate-version">Hermite polynomials — the multivariate version<a class="headerlink" href="#hermite-polynomials-the-multivariate-version" title="Permanent link">&para;</a></h2>
+<h3 id="1d-probabilists-hermite-polynomials">1D probabilist's Hermite polynomials<a class="headerlink" href="#1d-probabilists-hermite-polynomials" title="Permanent link">&para;</a></h3>
+<p>The 1D probabilist's Hermite polynomial of degree <span class="arithmatex">\(n\)</span> satisfies</p>
+<div class="arithmatex">\[
+\text{He}_n(\xi) = (-1)^n \, e^{\xi^2/2}\, \frac{d^n}{d\xi^n}\, e^{-\xi^2/2}
+\]</div>
+<p>and the orthogonality relation</p>
+<div class="arithmatex">\[
+\int_{-\infty}^{\infty} \text{He}_m(\xi)\, \text{He}_n(\xi)\, \omega(\xi)\, d\xi = n!\, \delta_{mn}.
+\]</div>
+<p>The first few:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><span class="arithmatex">\(n\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(\text{He}_n(\xi)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"><span class="arithmatex">\(\xi\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;"><span class="arithmatex">\(\xi^2 - 1\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;"><span class="arithmatex">\(\xi^3 - 3\xi\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;"><span class="arithmatex">\(\xi^4 - 6\xi^2 + 3\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="multivariate-tensorial-hermite-polynomials">Multivariate (tensorial) Hermite polynomials<a class="headerlink" href="#multivariate-tensorial-hermite-polynomials" title="Permanent link">&para;</a></h3>
+<p>In <span class="arithmatex">\(d\)</span> dimensions, the rank-<span class="arithmatex">\(n\)</span> Hermite polynomial is a <strong>tensor</strong> <span class="arithmatex">\(\mathbf{H}^{(n)}(\boldsymbol{\xi})\)</span> with components</p>
+<div class="arithmatex">\[
+H^{(n)}_{i_1 i_2 \cdots i_n}(\boldsymbol{\xi}) = (-1)^n\, \frac{1}{\omega(\boldsymbol{\xi})}\, \frac{\partial^n \omega(\boldsymbol{\xi})}{\partial \xi_{i_1}\, \partial \xi_{i_2} \cdots \partial \xi_{i_n}}.
+\]</div>
+<p>These tensorial polynomials inherit the key orthogonality property from the 1D case. They show up naturally in the Hermite expansion of the Maxwell–Boltzmann distribution:</p>
+<div class="arithmatex">\[
+f^{(\text{eq})}(\boldsymbol{\xi}) = \omega(\boldsymbol{\xi}) \sum_{n=0}^{\infty} \frac{1}{n!}\, \mathbf{a}^{(n)} : \mathbf{H}^{(n)}(\boldsymbol{\xi})
+\]</div>
+<p>where <span class="arithmatex">\(\mathbf{a}^{(n)}\)</span> are the expansion coefficients (related to macroscopic moments: density, velocity, temperature, stress, heat flux, …).</p>
+<div class="admonition example">
+<p class="admonition-title">Rank-2 example (2D)</p>
+<p>For <span class="arithmatex">\(d = 2\)</span> and <span class="arithmatex">\(n = 2\)</span>:</p>
+<div class="arithmatex">\[
+H^{(2)}_{ij}(\boldsymbol{\xi}) = \xi_i \xi_j - \delta_{ij}
+\]</div>
+<p>The unique components are <span class="arithmatex">\(H^{(2)}_{11} = \xi_1^2 - 1\)</span>, <span class="arithmatex">\(H^{(2)}_{12} = \xi_1 \xi_2\)</span>, <span class="arithmatex">\(H^{(2)}_{22} = \xi_2^2 - 1\)</span>.</p>
+</div>
+<hr />
+<h2 id="the-lattice-constraint">The lattice constraint<a class="headerlink" href="#the-lattice-constraint" title="Permanent link">&para;</a></h2>
+<p>Here is what makes this problem interesting — and different from classical Gauss–Hermite quadrature.</p>
+<p>We require all quadrature nodes to lie on a <strong>regular Cartesian lattice</strong> with spacing <span class="arithmatex">\(c\)</span>:</p>
+<div class="arithmatex">\[
+\boldsymbol{\xi}_a = c\, \mathbf{n}_a, \qquad \mathbf{n}_a \in \mathbb{Z}^d.
+\]</div>
+<p>This constraint is not merely aesthetic. In the <strong>lattice Boltzmann method</strong>, particle velocities must map grid points to grid points in a single time step. The spacing <span class="arithmatex">\(c\)</span> relates the thermal velocity scale to the grid spacing — it encodes the <em>lattice temperature</em>.</p>
+<p>The quadrature condition becomes: find integer vectors <span class="arithmatex">\(\{\mathbf{n}_a\}\)</span>, a spacing <span class="arithmatex">\(c &gt; 0\)</span>, and weights <span class="arithmatex">\(\{w_a\}\)</span> such that</p>
+<div class="arithmatex">\[
+\sum_{a} w_a\, H^{(n)}_{i_1 \cdots i_n}(c\, \mathbf{n}_a) = \delta_{n0}
+\]</div>
+<p>for all <span class="arithmatex">\(n = 0, 1, \ldots, N\)</span>. (The right-hand side reflects the fact that <span class="arithmatex">\(\int \mathbf{H}^{(n)} \omega\, d\boldsymbol{\xi} = 0\)</span> for <span class="arithmatex">\(n \geq 1\)</span> and equals 1 for <span class="arithmatex">\(n = 0\)</span>.)</p>
+<hr />
+<h2 id="connection-to-the-lattice-boltzmann-method">Connection to the lattice Boltzmann method<a class="headerlink" href="#connection-to-the-lattice-boltzmann-method" title="Permanent link">&para;</a></h2>
+<p>The lattice Boltzmann equation evolves a set of distribution functions <span class="arithmatex">\(\{f_a\}\)</span> — one per discrete velocity <span class="arithmatex">\(\boldsymbol{\xi}_a = c\, \mathbf{n}_a\)</span> — through streaming and collision steps. The equilibrium distribution is</p>
+<div class="arithmatex">\[
+f_a^{(\text{eq})} = w_a \left[ \rho + \rho\, \frac{\mathbf{u} \cdot \boldsymbol{\xi}_a}{c_s^2} + \frac{\rho}{2\, c_s^4}\left((\mathbf{u} \cdot \boldsymbol{\xi}_a)^2 - c_s^2\, |\mathbf{u}|^2\right) + \cdots \right]
+\]</div>
+<p>where <span class="arithmatex">\(c_s^2 = c^2/d\)</span> is the lattice speed of sound. The quadrature weights <span class="arithmatex">\(w_a\)</span> and lattice spacing <span class="arithmatex">\(c\)</span> <strong>must be chosen so that the discrete moments match the continuous Gaussian moments</strong> — which is exactly the Hermite quadrature condition above.</p>
+<p>A lattice that satisfies the quadrature condition up to degree <span class="arithmatex">\(N\)</span> guarantees:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Degree <span class="arithmatex">\(N\)</span></th>
+<th style="text-align: left;">Physical accuracy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">Correct density and momentum (isothermal, incompressible limit)</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">Correct stress tensor → recovers Navier–Stokes equations</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: left;">Correct heat flux → recovers energy equation (thermal flows)</td>
+</tr>
+<tr>
+<td style="text-align: center;">8+</td>
+<td style="text-align: left;">Higher-order non-equilibrium effects (Burnett, super-Burnett)</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">The naming convention</p>
+<p><strong>DdQn</strong> means: <span class="arithmatex">\(d\)</span>-dimensional lattice with <span class="arithmatex">\(n\)</span> quadrature points. For example, <strong>D2Q9</strong> is the classic 2D lattice Boltzmann velocity set with 9 velocities. <strong>D2Q49a</strong> is a higher-order variant with 49 velocities, sufficient for thermal flows.</p>
+</div>
+<hr />
+<h2 id="symmetry-and-lattice-shells">Symmetry and lattice shells<a class="headerlink" href="#symmetry-and-lattice-shells" title="Permanent link">&para;</a></h2>
+<p>The Gaussian weight <span class="arithmatex">\(\omega(\boldsymbol{\xi})\)</span> is invariant under the full symmetry group of the <span class="arithmatex">\(d\)</span>-dimensional hypercube (permutations and sign changes of coordinates). This means we can organize the lattice into <strong>shells</strong> — orbits of the symmetry group.</p>
+<p>Each shell is generated by a single representative point <span class="arithmatex">\(\mathbf{n}\)</span>, and all points obtained by permuting and reflecting its coordinates share the same weight. For example, in 2D, the generator <span class="arithmatex">\((1, 2)\)</span> produces the shell</p>
+<div class="arithmatex">\[
+\{(\pm 1, \pm 2),\; (\pm 2, \pm 1)\} \quad \text{(8 points total)}.
+\]</div>
+<p>This dramatically reduces the number of unknowns. Instead of solving for individual <span class="arithmatex">\(w_a\)</span>, we solve for <strong>one weight per shell</strong> — and the lattice spacing <span class="arithmatex">\(c\)</span>.</p>
+<p>The "max layer" parameter in our database indicates the outermost shell index: a lattice with max layer <span class="arithmatex">\(L\)</span> uses points <span class="arithmatex">\(\mathbf{n}\)</span> with <span class="arithmatex">\(\max_i |n_i| \leq L\)</span>.</p>
+<hr />
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ol>
+<li>X. Shan, "The mathematical structure of the lattices of the lattice Boltzmann method," <em>J. Comput. Sci.</em>, vol. 17, pp. 475–481, 2016.</li>
+<li>X. Shan, X.-F. Yuan, and H. Chen, "Kinetic theory representation of hydrodynamics: a way beyond the Navier–Stokes equation," <em>J. Fluid Mech.</em>, vol. 550, pp. 413–441, 2006.</li>
+<li>X. Shan, "General solution of lattices for Cartesian lattice Bhatnagar–Gross–Krook models," <em>Phys. Rev. E</em>, vol. 81, 036702, 2010.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "toc.follow", "search.suggest", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

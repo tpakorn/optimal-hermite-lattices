@@ -1,0 +1,104 @@
+site_name: "Optimal Hermite Lattices"
+site_description: "A database of optimal on-lattice quadrature rules for Hermite integration"
+site_author: "Pakorn Wongwaitayakornkul"
+site_url: ""
+
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: deep purple
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: deep purple
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Inter
+    code: JetBrains Mono
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - toc.follow
+    - search.suggest
+    - content.code.copy
+  icon:
+    repo: fontawesome/brands/github
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.details
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - def_list
+  - footnotes
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+nav:
+  - Home: index.md
+  - Background: background.md
+  - Methods: methods.md
+  - Lattice Catalog: catalog.md
+  - "1D Lattices":
+    - lattices/D1Q3.md
+    - lattices/D1Q7.md
+    - lattices/D1Q11.md
+    - lattices/D1Q15.md
+    - lattices/D1Q17.md
+    - lattices/D1Q21.md
+    - lattices/D1Q25.md
+    - lattices/D1Q27.md
+    - lattices/D1Q27a.md
+    - lattices/D1Q29.md
+  - "2D Lattices":
+    - lattices/D2Q9.md
+    - lattices/D2Q17a.md
+    - lattices/D2Q17b.md
+    - lattices/D2Q17c.md
+    - lattices/D2Q17d.md
+    - lattices/D2Q37.md
+    - lattices/D2Q49a.md
+    - lattices/D2Q49b.md
+    - lattices/D2Q49c.md
+    - lattices/D2Q49d.md
+    - lattices/D2Q49e.md
+    - lattices/D2Q49f.md
+    - lattices/D2Q49g.md
+    - lattices/D2Q49h.md
+    - lattices/D2Q49i.md
+    - lattices/D2Q77.md
+    - lattices/D2Q137.md
+    - lattices/D2Q205.md
+    - lattices/D2Q293.md
+    - lattices/D2Q353.md
+    - lattices/D2Q413.md
+  - "3D Lattices":
+    - lattices/D3Q15.md
+    - lattices/D3Q103.md
+    - lattices/D3Q327.md
+    - lattices/D3Q675.md

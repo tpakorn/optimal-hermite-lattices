@@ -1,0 +1,2456 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A database of optimal on-lattice quadrature rules for Hermite integration">
+      
+      
+        <meta name="author" content="Pakorn Wongwaitayakornkul">
+      
+      
+      
+        <link rel="prev" href="../background/">
+      
+      
+        <link rel="next" href="../catalog/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+    
+    
+      
+        <title>Methods - Optimal Hermite Lattices</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#computational-methods" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Optimal Hermite Lattices" class="md-header__button md-logo" aria-label="Optimal Hermite Lattices" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Optimal Hermite Lattices
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Methods
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="deep-purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../background/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Background
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Methods
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../catalog/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Lattice Catalog
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../lattices/D1Q3/" class="md-tabs__link">
+          
+  
+  
+  1D Lattices
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../lattices/D2Q9/" class="md-tabs__link">
+          
+  
+  
+  2D Lattices
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../lattices/D3Q15/" class="md-tabs__link">
+          
+  
+  
+  3D Lattices
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Optimal Hermite Lattices" class="md-nav__button md-logo" aria-label="Optimal Hermite Lattices" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Optimal Hermite Lattices
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../background/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Background
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Methods
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview-of-the-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview of the pipeline
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-multivariate-hermite-polynomials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Multivariate Hermite polynomials
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 1: Multivariate Hermite polynomials">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-recurrence-relation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The recurrence relation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2d-order-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: 2D, order 4
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-the-characteristic-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: The characteristic matrix
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 2: The characteristic matrix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-up-the-linear-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting up the linear system
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-solving-for-the-lattice-spacing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Solving for the lattice spacing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 3: Solving for the lattice spacing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#row-reduction-and-the-spacing-polynomial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Row reduction and the spacing polynomial
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-1d-with-layer-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: 1D with layer 1
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-minimizing-the-number-of-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Minimizing the number of points
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 4: Minimizing the number of points">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-integer-programming-formulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The integer programming formulation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiple-solutions-and-naming-conventions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multiple solutions and naming conventions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation details
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#computational-complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Computational complexity
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../catalog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lattice Catalog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1D Lattices
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    1D Lattices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D1Q3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D1Q3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D1Q7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D1Q7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D1Q11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D1Q11
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D1Q15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D1Q15
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D1Q17/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D1Q17
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D1Q21/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D1Q21
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D1Q25/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D1Q25
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D1Q27/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D1Q27
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D1Q27a/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D1Q27a
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D1Q29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D1Q29
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2D Lattices
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2D Lattices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D2Q9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D2Q9
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D2Q17a/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D2Q17a
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D2Q17b/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D2Q17b
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D2Q17c/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D2Q17c
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D2Q17d/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D2Q17d
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D2Q37/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D2Q37
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D2Q49a/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D2Q49a
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D2Q49b/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D2Q49b
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D2Q49c/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D2Q49c
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D2Q49d/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D2Q49d
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D2Q49e/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D2Q49e
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D2Q49f/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D2Q49f
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D2Q49g/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D2Q49g
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D2Q49h/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D2Q49h
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D2Q49i/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D2Q49i
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D2Q77/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D2Q77
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D2Q137/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D2Q137
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D2Q205/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D2Q205
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D2Q293/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D2Q293
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D2Q353/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D2Q353
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D2Q413/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D2Q413
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3D Lattices
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3D Lattices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D3Q15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D3Q15
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D3Q103/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D3Q103
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D3Q327/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D3Q327
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lattices/D3Q675/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D3Q675
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview-of-the-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview of the pipeline
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-multivariate-hermite-polynomials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Multivariate Hermite polynomials
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 1: Multivariate Hermite polynomials">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-recurrence-relation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The recurrence relation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2d-order-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: 2D, order 4
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-the-characteristic-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: The characteristic matrix
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 2: The characteristic matrix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-up-the-linear-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting up the linear system
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-solving-for-the-lattice-spacing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Solving for the lattice spacing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 3: Solving for the lattice spacing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#row-reduction-and-the-spacing-polynomial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Row reduction and the spacing polynomial
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-1d-with-layer-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: 1D with layer 1
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-minimizing-the-number-of-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Minimizing the number of points
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 4: Minimizing the number of points">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-integer-programming-formulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The integer programming formulation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiple-solutions-and-naming-conventions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multiple solutions and naming conventions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation details
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#computational-complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Computational complexity
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="computational-methods">Computational Methods<a class="headerlink" href="#computational-methods" title="Permanent link">&para;</a></h1>
+<p>This page walks through the algorithms used to compute the optimal Hermite lattice quadrature rules in our database. The approach combines <strong>symbolic algebra</strong>, <strong>polynomial root-finding</strong>, and <strong>integer linear programming</strong> — a satisfying blend of pure math and optimization.</p>
+<hr />
+<h2 id="overview-of-the-pipeline">Overview of the pipeline<a class="headerlink" href="#overview-of-the-pipeline" title="Permanent link">&para;</a></h2>
+<p>The computation proceeds in four main stages:</p>
+<div class="method-step">
+<h3>Step 1 — Compute multivariate Hermite polynomials</h3>
+Build the tensorial Hermite polynomials \(\mathbf{H}^{(n)}(\boldsymbol{\xi})\) up to the desired degree, using a recursive formula.
+</div>
+
+<div class="method-step">
+<h3>Step 2 — Assemble the characteristic matrix</h3>
+Substitute lattice points into the Hermite polynomials and collect the quadrature conditions into a single matrix equation in the weights and spacing.
+</div>
+
+<div class="method-step">
+<h3>Step 3 — Solve for the lattice spacing</h3>
+Reduce the matrix to row-echelon form. The last row yields a polynomial in the spacing \(c\), whose positive real roots give candidate lattice spacings.
+</div>
+
+<div class="method-step">
+<h3>Step 4 — Minimize the number of points</h3>
+For each valid spacing, solve a mixed-integer program to find the fewest lattice shells (and their weights) that satisfy all quadrature conditions.
+</div>
+
+<p>Let's dig into each step.</p>
+<hr />
+<h2 id="step-1-multivariate-hermite-polynomials">Step 1: Multivariate Hermite polynomials<a class="headerlink" href="#step-1-multivariate-hermite-polynomials" title="Permanent link">&para;</a></h2>
+<h3 id="the-recurrence-relation">The recurrence relation<a class="headerlink" href="#the-recurrence-relation" title="Permanent link">&para;</a></h3>
+<p>Instead of computing the tensorial Hermite polynomial from its definition (which involves high-order derivatives of the Gaussian), we use a <strong>three-term recurrence</strong>:</p>
+<div class="arithmatex">\[
+H^{(n)}_{i_1 i_2 \cdots i_n}(\boldsymbol{\xi}) = \xi_{i_1}\, H^{(n-1)}_{i_2 \cdots i_n}(\boldsymbol{\xi}) - \sum_{k=2}^{n} \delta_{i_1 i_k}\, H^{(n-2)}_{i_2 \cdots \hat{i}_k \cdots i_n}(\boldsymbol{\xi})
+\]</div>
+<p>where <span class="arithmatex">\(\hat{i}_k\)</span> means "omit index <span class="arithmatex">\(i_k\)</span>." The base cases are</p>
+<div class="arithmatex">\[
+H^{(0)} = 1, \qquad H^{(1)}_i = \xi_i.
+\]</div>
+<p>This recurrence is implemented in the <code>HermiteDict</code> class, which stores the polynomials as a dictionary keyed by sorted index tuples. Memoization avoids recomputing lower-order terms.</p>
+<div class="admonition note">
+<p class="admonition-title">Symmetry reduction</p>
+<p>Because the Hermite tensor is symmetric under permutation of its indices, we only need to store entries for <strong>sorted</strong> index tuples <span class="arithmatex">\((i_1 \leq i_2 \leq \cdots \leq i_n)\)</span>. The number of unique components for a rank-<span class="arithmatex">\(n\)</span> tensor in <span class="arithmatex">\(d\)</span> dimensions is <span class="arithmatex">\(\binom{d + n - 1}{n}\)</span>, which is much smaller than <span class="arithmatex">\(d^n\)</span>.</p>
+</div>
+<h3 id="example-2d-order-4">Example: 2D, order 4<a class="headerlink" href="#example-2d-order-4" title="Permanent link">&para;</a></h3>
+<p>The rank-4 Hermite polynomial in 2D has <span class="arithmatex">\(\binom{2 + 4 - 1}{4} = 5\)</span> unique components:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Index</th>
+<th style="text-align: left;"><span class="arithmatex">\(H^{(4)}_{ijkl}(\xi_1, \xi_2)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">(1,1,1,1)</td>
+<td style="text-align: left;"><span class="arithmatex">\(\xi_1^4 - 6\xi_1^2 + 3\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">(1,1,1,2)</td>
+<td style="text-align: left;"><span class="arithmatex">\(\xi_1^3 \xi_2 - 3\xi_1 \xi_2\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">(1,1,2,2)</td>
+<td style="text-align: left;"><span class="arithmatex">\(\xi_1^2 \xi_2^2 - \xi_1^2 - \xi_2^2 + 1\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">(1,2,2,2)</td>
+<td style="text-align: left;"><span class="arithmatex">\(\xi_1 \xi_2^3 - 3\xi_1 \xi_2\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">(2,2,2,2)</td>
+<td style="text-align: left;"><span class="arithmatex">\(\xi_2^4 - 6\xi_2^2 + 3\)</span></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="step-2-the-characteristic-matrix">Step 2: The characteristic matrix<a class="headerlink" href="#step-2-the-characteristic-matrix" title="Permanent link">&para;</a></h2>
+<h3 id="setting-up-the-linear-system">Setting up the linear system<a class="headerlink" href="#setting-up-the-linear-system" title="Permanent link">&para;</a></h3>
+<p>Given a dimension <span class="arithmatex">\(d\)</span>, maximum layer <span class="arithmatex">\(L\)</span>, and target polynomial degree <span class="arithmatex">\(N\)</span>, we:</p>
+<ol>
+<li>
+<p><strong>Enumerate generator points.</strong> List all ordered tuples <span class="arithmatex">\(\mathbf{n} = (n_1, \ldots, n_d)\)</span> with <span class="arithmatex">\(0 \leq n_1 \leq n_2 \leq \cdots \leq n_d \leq L\)</span>. Each generator produces a full symmetry orbit of lattice points.</p>
+</li>
+<li>
+<p><strong>Assign one weight per generator.</strong> Let <span class="arithmatex">\(w_1, w_2, \ldots, w_K\)</span> be the unknown weights, one for each generator.</p>
+</li>
+<li>
+<p><strong>Write the quadrature conditions.</strong> For each even order <span class="arithmatex">\(n = 0, 2, 4, \ldots, N-1\)</span>, substitute each symmetric orbit into the Hermite polynomial and sum:</p>
+</li>
+</ol>
+<div class="arithmatex">\[
+\sum_{k=1}^{K} w_k \sum_{\mathbf{n}' \in \text{orbit}(\mathbf{n}_k)} H^{(n)}_{i_1 \cdots i_n}(c\, \mathbf{n}') = \delta_{n0}
+\]</div>
+<div class="admonition info">
+<p class="admonition-title">Why only even orders?</p>
+<p>The odd-order Hermite polynomials are automatically zero when summed over the full symmetry orbit (which includes both <span class="arithmatex">\(\mathbf{n}\)</span> and <span class="arithmatex">\(-\mathbf{n}\)</span>). So we only need to enforce the even-order conditions.</p>
+</div>
+<ol>
+<li><strong>Collect into a matrix.</strong> Each unique polynomial condition gives one row. The columns correspond to weights <span class="arithmatex">\(w_1, \ldots, w_K\)</span>, and the rightmost column is the target vector (1 for order 0, 0 otherwise). The matrix entries are polynomials in <span class="arithmatex">\(c\)</span>.</li>
+</ol>
+<p>This yields the <strong>characteristic matrix</strong> <span class="arithmatex">\(\mathbf{M}(c)\)</span>:</p>
+<div class="arithmatex">\[
+\mathbf{M}(c)\, \mathbf{w} = \mathbf{b}
+\]</div>
+<hr />
+<h2 id="step-3-solving-for-the-lattice-spacing">Step 3: Solving for the lattice spacing<a class="headerlink" href="#step-3-solving-for-the-lattice-spacing" title="Permanent link">&para;</a></h2>
+<h3 id="row-reduction-and-the-spacing-polynomial">Row reduction and the spacing polynomial<a class="headerlink" href="#row-reduction-and-the-spacing-polynomial" title="Permanent link">&para;</a></h3>
+<p>We apply <strong>Gaussian elimination</strong> (symbolically) to reduce <span class="arithmatex">\(\mathbf{M}(c)\)</span> to row-echelon form. After elimination, the last non-trivial row contains only <span class="arithmatex">\(c\)</span> (no weights), producing a <strong>univariate polynomial equation</strong> in <span class="arithmatex">\(c\)</span>:</p>
+<div class="arithmatex">\[
+P(c) = 0.
+\]</div>
+<p>The positive real roots of <span class="arithmatex">\(P(c)\)</span> are the candidate lattice spacings. We compute these roots to high precision (typically 200+ digits) using SymPy's <code>real_roots</code> function.</p>
+<div class="admonition tip">
+<p class="admonition-title">Physical interpretation of the spacing</p>
+<p>The lattice spacing <span class="arithmatex">\(c\)</span> determines the <strong>lattice temperature</strong> <span class="arithmatex">\(T_L = c^2\)</span>. In LBM applications, <span class="arithmatex">\(c = \sqrt{3}\)</span> gives the familiar D1Q3 / D2Q9 lattices where the speed of sound is <span class="arithmatex">\(c_s = 1/\sqrt{3}\)</span>.</p>
+</div>
+<h3 id="example-1d-with-layer-1">Example: 1D with layer 1<a class="headerlink" href="#example-1d-with-layer-1" title="Permanent link">&para;</a></h3>
+<p>For <span class="arithmatex">\(d = 1\)</span>, <span class="arithmatex">\(L = 1\)</span>, and degree 5, the generator points are <span class="arithmatex">\(\{0, 1\}\)</span>. The characteristic matrix after row reduction gives:</p>
+<div class="arithmatex">\[
+P(c) = c^2 - 3 = 0 \quad \Longrightarrow \quad c = \sqrt{3} \approx 1.73205
+\]</div>
+<p>This is the classic D1Q3 lattice!</p>
+<hr />
+<h2 id="step-4-minimizing-the-number-of-points">Step 4: Minimizing the number of points<a class="headerlink" href="#step-4-minimizing-the-number-of-points" title="Permanent link">&para;</a></h2>
+<h3 id="the-integer-programming-formulation">The integer programming formulation<a class="headerlink" href="#the-integer-programming-formulation" title="Permanent link">&para;</a></h3>
+<p>For each valid spacing <span class="arithmatex">\(c^*\)</span>, we substitute into the characteristic matrix and solve for the weights. But we want the <strong>minimum number of active shells</strong> — this is where optimization enters.</p>
+<p>We formulate a <strong>mixed-integer linear program</strong> (MILP):</p>
+<p><strong>Variables:</strong></p>
+<ul>
+<li><span class="arithmatex">\(w_k \geq 0\)</span>: weight for shell <span class="arithmatex">\(k\)</span> (continuous)</li>
+<li><span class="arithmatex">\(x_k \in \{0, 1\}\)</span>: indicator — is shell <span class="arithmatex">\(k\)</span> active? (binary)</li>
+</ul>
+<p><strong>Constraints:</strong></p>
+<p>[
+\mathbf{M}(c^*)\, \mathbf{w} = \mathbf{b}
+]
+[
+w_k \leq M\, x_k \qquad \text{(big-M: if } x_k = 0 \text{ then } w_k = 0\text{)}
+]</p>
+<p><strong>Objective:</strong> minimize <span class="arithmatex">\(\sum_k s_k\, x_k\)</span>, where <span class="arithmatex">\(s_k\)</span> is the number of points in shell <span class="arithmatex">\(k\)</span>.</p>
+<p>This is solved using the <strong>Gurobi</strong> optimizer. The result gives us the minimum total number of quadrature points and the corresponding weights.</p>
+<div class="admonition example">
+<p class="admonition-title">D2Q9: the classic lattice</p>
+<p>For <span class="arithmatex">\(d = 2\)</span>, the MILP selects 3 shells from the available candidates:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Shell</th>
+<th style="text-align: center;">Generator</th>
+<th style="text-align: center;">Points</th>
+<th style="text-align: center;">Weight</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">(0, 0)</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">4/9</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">(0, 1)</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">1/9</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">(1, 1)</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">1/36</td>
+</tr>
+</tbody>
+</table>
+<p>Total: <strong>9 points</strong>, exact for degree 5. Spacing: <span class="arithmatex">\(c = \sqrt{3}\)</span>.</p>
+</div>
+<hr />
+<h2 id="multiple-solutions-and-naming-conventions">Multiple solutions and naming conventions<a class="headerlink" href="#multiple-solutions-and-naming-conventions" title="Permanent link">&para;</a></h2>
+<p>For higher-order lattices (e.g., D2Q49), the spacing polynomial <span class="arithmatex">\(P(c)\)</span> can have <strong>multiple positive real roots</strong>, each yielding a different valid lattice. These are labeled with letter suffixes: D2Q49<strong>a</strong>, D2Q49<strong>b</strong>, D2Q49<strong>c</strong>, etc.</p>
+<p>All solutions in our database are <strong>optimal</strong> in the sense that they use the minimum number of quadrature points for their given polynomial degree and dimension, among all lattice spacings arising from the same characteristic matrix.</p>
+<hr />
+<h2 id="implementation-details">Implementation details<a class="headerlink" href="#implementation-details" title="Permanent link">&para;</a></h2>
+<p>The core computation is implemented in Python, using:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Component</th>
+<th style="text-align: left;">Library</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Symbolic algebra (Hermite polynomials, row reduction)</td>
+<td style="text-align: left;"><a href="https://www.sympy.org/">SymPy</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Numerical arrays and linear algebra</td>
+<td style="text-align: left;"><a href="https://numpy.org/">NumPy</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Mixed-integer optimization</td>
+<td style="text-align: left;"><a href="https://www.gurobi.com/">Gurobi</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">High-precision arithmetic</td>
+<td style="text-align: left;">SymPy's arbitrary-precision floats</td>
+</tr>
+<tr>
+<td style="text-align: left;">Serialization of lattice data</td>
+<td style="text-align: left;"><a href="https://dill.readthedocs.io/">dill</a></td>
+</tr>
+</tbody>
+</table>
+<p>The implementation lives in the <code>HermiteDict</code> and <code>Lattice</code> classes, with key methods:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Compute Hermite polynomials recursively</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">hermite</span> <span class="o">=</span> <span class="n">HermiteDict</span><span class="p">()</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">H</span> <span class="o">=</span> <span class="n">hermite</span><span class="o">.</span><span class="n">recursive_hermite</span><span class="p">(</span><span class="n">order</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># Build the characteristic matrix</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">lat</span> <span class="o">=</span> <span class="n">Lattice</span><span class="p">()</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">M</span> <span class="o">=</span> <span class="n">lat</span><span class="o">.</span><span class="n">create_characteristic_matrix</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">layer</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="c1"># Find lattice spacings (roots of the last row)</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="n">spacings</span> <span class="o">=</span> <span class="n">lat</span><span class="o">.</span><span class="n">root_last_element</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="c1"># Minimize points via MILP</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="n">result</span> <span class="o">=</span> <span class="n">lat</span><span class="o">.</span><span class="n">minimize_points</span><span class="p">(</span><span class="n">M_evaluated</span><span class="p">)</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="c1"># → [num_points, active_shells, weights]</span>
+</code></pre></div>
+<hr />
+<h2 id="computational-complexity">Computational complexity<a class="headerlink" href="#computational-complexity" title="Permanent link">&para;</a></h2>
+<p>The hardest part is the <strong>symbolic row reduction</strong> of the characteristic matrix, which grows rapidly with dimension and layer count. Some rough scaling:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Dimension</th>
+<th style="text-align: center;">Layers</th>
+<th style="text-align: center;">Matrix size</th>
+<th style="text-align: center;">Compute time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1D</td>
+<td style="text-align: center;">1–19</td>
+<td style="text-align: center;">Small (~20×20)</td>
+<td style="text-align: center;">Seconds</td>
+</tr>
+<tr>
+<td style="text-align: center;">2D</td>
+<td style="text-align: center;">1–7</td>
+<td style="text-align: center;">Medium (~50×50)</td>
+<td style="text-align: center;">Minutes</td>
+</tr>
+<tr>
+<td style="text-align: center;">3D</td>
+<td style="text-align: center;">1–5</td>
+<td style="text-align: center;">Large (~100+×100+)</td>
+<td style="text-align: center;">Hours to days</td>
+</tr>
+</tbody>
+</table>
+<p>The 3D lattices (D3Q15 through D3Q675) represent significant computational effort and are among the largest optimal Hermite lattices computed to date.</p>
+<hr />
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ol>
+<li>X. Shan, "The mathematical structure of the lattices of the lattice Boltzmann method," <em>J. Comput. Sci.</em>, vol. 17, pp. 475–481, 2016.</li>
+<li>X. Shan, "General solution of lattices for Cartesian lattice Bhatnagar–Gross–Krook models," <em>Phys. Rev. E</em>, vol. 81, 036702, 2010.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "toc.follow", "search.suggest", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

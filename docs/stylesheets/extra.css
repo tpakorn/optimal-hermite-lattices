@@ -1,0 +1,160 @@
+/* ===== Custom styles for Optimal Hermite Lattices site ===== */
+
+:root {
+  --md-primary-fg-color: #3f51b5;
+  --md-accent-fg-color: #7c4dff;
+}
+
+/* Hero section on home page */
+.hero {
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.hero .subtitle {
+  font-size: 1.15rem;
+  color: var(--md-default-fg-color--light);
+  max-width: 700px;
+  margin: 0 auto 1.5rem;
+}
+
+/* Lattice cards grid */
+.lattice-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.lattice-card {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  transition: box-shadow 0.2s, transform 0.15s;
+  background: var(--md-default-bg-color);
+}
+
+.lattice-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  transform: translateY(-2px);
+}
+
+.lattice-card h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.2rem;
+}
+
+.lattice-card .meta {
+  font-size: 0.85rem;
+  color: var(--md-default-fg-color--light);
+  line-height: 1.6;
+}
+
+.lattice-card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Dimension badge */
+.dim-badge {
+  display: inline-block;
+  padding: 0.15rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 0.3rem;
+}
+
+.dim-1d { background: #2196f3; }
+.dim-2d { background: #4caf50; }
+.dim-3d { background: #ff9800; }
+
+/* Data tables */
+.lattice-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.92rem;
+}
+
+.lattice-table th {
+  background: var(--md-primary-fg-color);
+  color: white;
+  padding: 0.6rem 0.8rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+.lattice-table td {
+  padding: 0.5rem 0.8rem;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.lattice-table tr:hover td {
+  background: rgba(63, 81, 181, 0.04);
+}
+
+/* Stats banner */
+.stats-row {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin: 1.5rem 0;
+}
+
+.stat-box {
+  text-align: center;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  background: var(--md-code-bg-color);
+  min-width: 140px;
+}
+
+.stat-box .number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--md-primary-fg-color);
+}
+
+.stat-box .label {
+  font-size: 0.85rem;
+  color: var(--md-default-fg-color--light);
+  margin-top: 0.2rem;
+}
+
+/* Section headers */
+.section-header {
+  border-bottom: 2px solid var(--md-primary-fg-color);
+  padding-bottom: 0.4rem;
+  margin-top: 2rem;
+}
+
+/* Method step boxes */
+.method-step {
+  border-left: 3px solid var(--md-accent-fg-color);
+  padding: 0.8rem 1.2rem;
+  margin: 1rem 0;
+  background: var(--md-code-bg-color);
+  border-radius: 0 6px 6px 0;
+}
+
+.method-step h3 {
+  margin-top: 0;
+  color: var(--md-accent-fg-color);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .hero h1 { font-size: 1.6rem; }
+  .lattice-grid { grid-template-columns: 1fr; }
+  .stats-row { gap: 1rem; }
+}
