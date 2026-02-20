@@ -106,7 +106,7 @@
 .stats-row {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 1.2rem;
   flex-wrap: wrap;
   margin: 1.5rem 0;
 }
@@ -119,6 +119,15 @@
   min-width: 140px;
 }
 
+.stat-box--compact {
+  padding: 0.6rem 1rem;
+  min-width: 100px;
+}
+
+.stat-box--compact .number {
+  font-size: 1.4rem;
+}
+
 .stat-box .number {
   font-size: 2rem;
   font-weight: 700;
@@ -126,9 +135,15 @@
 }
 
 .stat-box .label {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--md-default-fg-color--light);
-  margin-top: 0.2rem;
+  margin-top: 0.15rem;
+}
+
+/* White logo in header nav */
+.md-header .md-header__button img,
+.md-header__topic img {
+  filter: brightness(0) invert(1);
 }
 
 /* Section headers */
@@ -151,6 +166,15 @@
   margin-top: 0;
   color: var(--md-accent-fg-color);
 }
+
+/* Dimension row tinting for summary table */
+.lattice-table .row-d1 td { background: rgba(33, 150, 243, 0.06); }
+.lattice-table .row-d2 td { background: rgba(76, 175, 80, 0.06); }
+.lattice-table .row-d3 td { background: rgba(255, 152, 0, 0.06); }
+
+.lattice-table .row-d1:hover td { background: rgba(33, 150, 243, 0.12); }
+.lattice-table .row-d2:hover td { background: rgba(76, 175, 80, 0.12); }
+.lattice-table .row-d3:hover td { background: rgba(255, 152, 0, 0.12); }
 
 /* Responsive */
 @media (max-width: 600px) {

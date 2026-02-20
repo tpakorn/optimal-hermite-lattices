@@ -1,11 +1,10 @@
 # Lattice Catalog
 
-A complete listing of all computed optimal Hermite lattice quadrature rules,
-organized by spatial dimension. Click any card to see full details.
+Browse all computed optimal Hermite lattice quadrature rules. Click any entry to see full details.
 
 ## 1D Lattices
 
-| Name | Points | Degree | Max Layer | Spacing \(c\) |
+| Name | Points | Degree | Max Layer | Spacing *c* |
 |:-----|:------:|:------:|:---------:|:------------|
 | [D1Q3](lattices/D1Q3.md) | 3 | 2 | 1 | `1.7320508075…` |
 | [D1Q7](lattices/D1Q7.md) | 7 | 4 | 3 | `1.1969797703…` |
@@ -20,7 +19,7 @@ organized by spatial dimension. Click any card to see full details.
 
 <div class="lattice-grid">
 <div class="lattice-card">
-<a href="lattices/D1Q3/">
+<a href="../lattices/D1Q3/">
 <span class="dim-1d dim-badge">1D</span>
 <h3>D1Q3</h3>
 <div class="meta">
@@ -30,7 +29,7 @@ layer 1 · c ≈ 1.732050
 </a>
 </div>
 <div class="lattice-card">
-<a href="lattices/D1Q7/">
+<a href="../lattices/D1Q7/">
 <span class="dim-1d dim-badge">1D</span>
 <h3>D1Q7</h3>
 <div class="meta">
@@ -40,7 +39,7 @@ layer 3 · c ≈ 1.196979
 </a>
 </div>
 <div class="lattice-card">
-<a href="lattices/D1Q11/">
+<a href="../lattices/D1Q11/">
 <span class="dim-1d dim-badge">1D</span>
 <h3>D1Q11</h3>
 <div class="meta">
@@ -50,7 +49,7 @@ layer 5 · c ≈ 0.970008
 </a>
 </div>
 <div class="lattice-card">
-<a href="lattices/D1Q15/">
+<a href="../lattices/D1Q15/">
 <span class="dim-1d dim-badge">1D</span>
 <h3>D1Q15</h3>
 <div class="meta">
@@ -60,7 +59,7 @@ layer 7 · c ≈ 0.836920
 </a>
 </div>
 <div class="lattice-card">
-<a href="lattices/D1Q17/">
+<a href="../lattices/D1Q17/">
 <span class="dim-1d dim-badge">1D</span>
 <h3>D1Q17</h3>
 <div class="meta">
@@ -70,7 +69,7 @@ layer 9 · c ≈ 0.746894
 </a>
 </div>
 <div class="lattice-card">
-<a href="lattices/D1Q21/">
+<a href="../lattices/D1Q21/">
 <span class="dim-1d dim-badge">1D</span>
 <h3>D1Q21</h3>
 <div class="meta">
@@ -80,7 +79,7 @@ layer 11 · c ≈ 0.680806
 </a>
 </div>
 <div class="lattice-card">
-<a href="lattices/D1Q25/">
+<a href="../lattices/D1Q25/">
 <span class="dim-1d dim-badge">1D</span>
 <h3>D1Q25</h3>
 <div class="meta">
@@ -90,7 +89,7 @@ layer 13 · c ≈ 0.629637
 </a>
 </div>
 <div class="lattice-card">
-<a href="lattices/D1Q27/">
+<a href="../lattices/D1Q27/">
 <span class="dim-1d dim-badge">1D</span>
 <h3>D1Q27</h3>
 <div class="meta">
@@ -100,7 +99,7 @@ layer 15 · c ≈ 0.588504
 </a>
 </div>
 <div class="lattice-card">
-<a href="lattices/D1Q27a/">
+<a href="../lattices/D1Q27a/">
 <span class="dim-1d dim-badge">1D</span>
 <h3>D1Q27a</h3>
 <div class="meta">
@@ -110,7 +109,7 @@ layer 17 · c ≈ 0.554505
 </a>
 </div>
 <div class="lattice-card">
-<a href="lattices/D1Q29/">
+<a href="../lattices/D1Q29/">
 <span class="dim-1d dim-badge">1D</span>
 <h3>D1Q29</h3>
 <div class="meta">
@@ -123,7 +122,7 @@ layer 19 · c ≈ 0.525790
 
 ## 2D Lattices
 
-| Name | Points | Degree | Max Layer | Spacing \(c\) |
+| Name | Points | Degree | Max Layer | Spacing *c* |
 |:-----|:------:|:------:|:---------:|:------------|
 | [D2Q9](lattices/D2Q9.md) | 9 | 5 | 1 | `1.7320508075…` |
 | [D2Q17a](lattices/D2Q17a.md) | 17 | 7 | 3 | `1.6434306087…` |
@@ -149,7 +148,7 @@ layer 19 · c ≈ 0.525790
 
 <div class="lattice-grid">
 <div class="lattice-card">
-<a href="lattices/D2Q9/">
+<a href="../lattices/D2Q9/">
 <span class="dim-2d dim-badge">2D</span>
 <h3>D2Q9</h3>
 <div class="meta">
@@ -159,7 +158,7 @@ layer 1 · c ≈ 1.732050
 </a>
 </div>
 <div class="lattice-card">
-<a href="lattices/D2Q17a/">
+<a href="../lattices/D2Q17a/">
 <span class="dim-2d dim-badge">2D</span>
 <h3>D2Q17a</h3>
 <div class="meta">
@@ -169,7 +168,7 @@ layer 3 · c ≈ 1.643430
 </a>
 </div>
 <div class="lattice-card">
-<a href="lattices/D2Q17b/">
+<a href="../lattices/D2Q17b/">
 <span class="dim-2d dim-badge">2D</span>
 <h3>D2Q17b</h3>
 <div class="meta">
@@ -179,7 +178,7 @@ layer 3 · c ≈ 1.649472
 </a>
 </div>
 <div class="lattice-card">
-<a href="lattices/D2Q17c/">
+<a href="../lattices/D2Q17c/">
 <span class="dim-2d dim-badge">2D</span>
 <h3>D2Q17c</h3>
 <div class="meta">
@@ -189,7 +188,7 @@ layer 3 · c ≈ 1.154700
 </a>
 </div>
 <div class="lattice-card">
-<a href="lattices/D2Q17d/">
+<a href="../lattices/D2Q17d/">
 <span class="dim-2d dim-badge">2D</span>
 <h3>D2Q17d</h3>
 <div class="meta">
@@ -199,7 +198,7 @@ layer 3 · c ≈ 0.816496
 </a>
 </div>
 <div class="lattice-card">
-<a href="lattices/D2Q37/">
+<a href="../lattices/D2Q37/">
 <span class="dim-2d dim-badge">2D</span>
 <h3>D2Q37</h3>
 <div class="meta">
@@ -209,7 +208,7 @@ layer 3 · c ≈ 1.196979
 </a>
 </div>
 <div class="lattice-card">
-<a href="lattices/D2Q49a/">
+<a href="../lattices/D2Q49a/">
 <span class="dim-2d dim-badge">2D</span>
 <h3>D2Q49a</h3>
 <div class="meta">
@@ -219,7 +218,7 @@ layer 5 · c ≈ 0.924699
 </a>
 </div>
 <div class="lattice-card">
-<a href="lattices/D2Q49b/">
+<a href="../lattices/D2Q49b/">
 <span class="dim-2d dim-badge">2D</span>
 <h3>D2Q49b</h3>
 <div class="meta">
@@ -229,7 +228,7 @@ layer 5 · c ≈ 1.105940
 </a>
 </div>
 <div class="lattice-card">
-<a href="lattices/D2Q49c/">
+<a href="../lattices/D2Q49c/">
 <span class="dim-2d dim-badge">2D</span>
 <h3>D2Q49c</h3>
 <div class="meta">
@@ -239,7 +238,7 @@ layer 5 · c ≈ 1.042133
 </a>
 </div>
 <div class="lattice-card">
-<a href="lattices/D2Q49d/">
+<a href="../lattices/D2Q49d/">
 <span class="dim-2d dim-badge">2D</span>
 <h3>D2Q49d</h3>
 <div class="meta">
@@ -249,7 +248,7 @@ layer 5 · c ≈ 1.150047
 </a>
 </div>
 <div class="lattice-card">
-<a href="lattices/D2Q49e/">
+<a href="../lattices/D2Q49e/">
 <span class="dim-2d dim-badge">2D</span>
 <h3>D2Q49e</h3>
 <div class="meta">
@@ -259,7 +258,7 @@ layer 5 · c ≈ 0.921610
 </a>
 </div>
 <div class="lattice-card">
-<a href="lattices/D2Q49f/">
+<a href="../lattices/D2Q49f/">
 <span class="dim-2d dim-badge">2D</span>
 <h3>D2Q49f</h3>
 <div class="meta">
@@ -269,7 +268,7 @@ layer 5 · c ≈ 0.755936
 </a>
 </div>
 <div class="lattice-card">
-<a href="lattices/D2Q49g/">
+<a href="../lattices/D2Q49g/">
 <span class="dim-2d dim-badge">2D</span>
 <h3>D2Q49g</h3>
 <div class="meta">
@@ -279,7 +278,7 @@ layer 5 · c ≈ 1.042434
 </a>
 </div>
 <div class="lattice-card">
-<a href="lattices/D2Q49h/">
+<a href="../lattices/D2Q49h/">
 <span class="dim-2d dim-badge">2D</span>
 <h3>D2Q49h</h3>
 <div class="meta">
@@ -289,7 +288,7 @@ layer 5 · c ≈ 0.936992
 </a>
 </div>
 <div class="lattice-card">
-<a href="lattices/D2Q49i/">
+<a href="../lattices/D2Q49i/">
 <span class="dim-2d dim-badge">2D</span>
 <h3>D2Q49i</h3>
 <div class="meta">
@@ -299,7 +298,7 @@ layer 5 · c ≈ 0.894019
 </a>
 </div>
 <div class="lattice-card">
-<a href="lattices/D2Q77/">
+<a href="../lattices/D2Q77/">
 <span class="dim-2d dim-badge">2D</span>
 <h3>D2Q77</h3>
 <div class="meta">
@@ -309,7 +308,7 @@ layer 5 · c ≈ 0.970008
 </a>
 </div>
 <div class="lattice-card">
-<a href="lattices/D2Q137/">
+<a href="../lattices/D2Q137/">
 <span class="dim-2d dim-badge">2D</span>
 <h3>D2Q137</h3>
 <div class="meta">
@@ -319,7 +318,7 @@ layer 7 · c ≈ 0.836920
 </a>
 </div>
 <div class="lattice-card">
-<a href="lattices/D2Q205/">
+<a href="../lattices/D2Q205/">
 <span class="dim-2d dim-badge">2D</span>
 <h3>D2Q205</h3>
 <div class="meta">
@@ -329,7 +328,7 @@ layer 9 · c ≈ 0.746894
 </a>
 </div>
 <div class="lattice-card">
-<a href="lattices/D2Q293/">
+<a href="../lattices/D2Q293/">
 <span class="dim-2d dim-badge">2D</span>
 <h3>D2Q293</h3>
 <div class="meta">
@@ -339,7 +338,7 @@ layer 11 · c ≈ 0.680806
 </a>
 </div>
 <div class="lattice-card">
-<a href="lattices/D2Q353/">
+<a href="../lattices/D2Q353/">
 <span class="dim-2d dim-badge">2D</span>
 <h3>D2Q353</h3>
 <div class="meta">
@@ -349,7 +348,7 @@ layer 13 · c ≈ 0.629637
 </a>
 </div>
 <div class="lattice-card">
-<a href="lattices/D2Q413/">
+<a href="../lattices/D2Q413/">
 <span class="dim-2d dim-badge">2D</span>
 <h3>D2Q413</h3>
 <div class="meta">
@@ -362,46 +361,46 @@ layer 15 · c ≈ 0.588504
 
 ## 3D Lattices
 
-| Name | Points | Degree | Max Layer | Spacing \(c\) |
+| Name | Points | Degree | Max Layer | Spacing *c* |
 |:-----|:------:|:------:|:---------:|:------------|
-| [D3Q15](lattices/D3Q15.md) | 675 | 8 | 7 | `0.8369204054…` |
-| [D3Q103](lattices/D3Q103.md) | 675 | 8 | 7 | `0.8369204054…` |
-| [D3Q327](lattices/D3Q327.md) | 675 | 8 | 7 | `0.8369204054…` |
+| [D3Q15](lattices/D3Q15.md) | 15 | 2 | 1 | `1.7320508075…` |
+| [D3Q103](lattices/D3Q103.md) | 103 | 4 | 3 | `1.1969797703…` |
+| [D3Q327](lattices/D3Q327.md) | 327 | 6 | 5 | `0.9700084987…` |
 | [D3Q675](lattices/D3Q675.md) | 675 | 8 | 7 | `0.8369204054…` |
 
 <div class="lattice-grid">
 <div class="lattice-card">
-<a href="lattices/D3Q15/">
+<a href="../lattices/D3Q15/">
 <span class="dim-3d dim-badge">3D</span>
 <h3>D3Q15</h3>
 <div class="meta">
-675 points · degree 8<br>
-layer 7 · c ≈ 0.836920
+15 points · degree 2<br>
+layer 1 · c ≈ 1.732050
 </div>
 </a>
 </div>
 <div class="lattice-card">
-<a href="lattices/D3Q103/">
+<a href="../lattices/D3Q103/">
 <span class="dim-3d dim-badge">3D</span>
 <h3>D3Q103</h3>
 <div class="meta">
-675 points · degree 8<br>
-layer 7 · c ≈ 0.836920
+103 points · degree 4<br>
+layer 3 · c ≈ 1.196979
 </div>
 </a>
 </div>
 <div class="lattice-card">
-<a href="lattices/D3Q327/">
+<a href="../lattices/D3Q327/">
 <span class="dim-3d dim-badge">3D</span>
 <h3>D3Q327</h3>
 <div class="meta">
-675 points · degree 8<br>
-layer 7 · c ≈ 0.836920
+327 points · degree 6<br>
+layer 5 · c ≈ 0.970008
 </div>
 </a>
 </div>
 <div class="lattice-card">
-<a href="lattices/D3Q675/">
+<a href="../lattices/D3Q675/">
 <span class="dim-3d dim-badge">3D</span>
 <h3>D3Q675</h3>
 <div class="meta">

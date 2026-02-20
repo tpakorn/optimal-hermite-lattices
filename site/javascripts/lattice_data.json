@@ -1,0 +1,253 @@
+{
+  "D1": [
+    {
+      "name": "D1Q3",
+      "num_points": 3,
+      "degree": 2,
+      "max_layer": 1,
+      "spacing": 1.73205081
+    },
+    {
+      "name": "D1Q7",
+      "num_points": 7,
+      "degree": 4,
+      "max_layer": 3,
+      "spacing": 1.19697977
+    },
+    {
+      "name": "D1Q11",
+      "num_points": 11,
+      "degree": 6,
+      "max_layer": 5,
+      "spacing": 0.9700085
+    },
+    {
+      "name": "D1Q15",
+      "num_points": 15,
+      "degree": 8,
+      "max_layer": 7,
+      "spacing": 0.83692041
+    },
+    {
+      "name": "D1Q17",
+      "num_points": 17,
+      "degree": 10,
+      "max_layer": 9,
+      "spacing": 0.74689486
+    },
+    {
+      "name": "D1Q21",
+      "num_points": 21,
+      "degree": 12,
+      "max_layer": 11,
+      "spacing": 0.68080678
+    },
+    {
+      "name": "D1Q25",
+      "num_points": 25,
+      "degree": 14,
+      "max_layer": 13,
+      "spacing": 0.6296374
+    },
+    {
+      "name": "D1Q27",
+      "num_points": 27,
+      "degree": 16,
+      "max_layer": 15,
+      "spacing": 0.58850475
+    },
+    {
+      "name": "D1Q27a",
+      "num_points": 27,
+      "degree": 18,
+      "max_layer": 17,
+      "spacing": 0.55450562
+    },
+    {
+      "name": "D1Q29",
+      "num_points": 29,
+      "degree": 20,
+      "max_layer": 19,
+      "spacing": 0.525791
+    }
+  ],
+  "D2": [
+    {
+      "name": "D2Q9",
+      "num_points": 9,
+      "degree": 5,
+      "max_layer": 1,
+      "spacing": 1.73205081
+    },
+    {
+      "name": "D2Q17a",
+      "num_points": 17,
+      "degree": 7,
+      "max_layer": 3,
+      "spacing": 1.64343061
+    },
+    {
+      "name": "D2Q17b",
+      "num_points": 17,
+      "degree": 7,
+      "max_layer": 3,
+      "spacing": 1.64947241
+    },
+    {
+      "name": "D2Q17c",
+      "num_points": 17,
+      "degree": 7,
+      "max_layer": 3,
+      "spacing": 1.15470054
+    },
+    {
+      "name": "D2Q17d",
+      "num_points": 17,
+      "degree": 7,
+      "max_layer": 3,
+      "spacing": 0.81649658
+    },
+    {
+      "name": "D2Q37",
+      "num_points": 37,
+      "degree": 9,
+      "max_layer": 3,
+      "spacing": 1.19697977
+    },
+    {
+      "name": "D2Q49a",
+      "num_points": 49,
+      "degree": 11,
+      "max_layer": 5,
+      "spacing": 0.92469963
+    },
+    {
+      "name": "D2Q49b",
+      "num_points": 49,
+      "degree": 11,
+      "max_layer": 5,
+      "spacing": 1.10594055
+    },
+    {
+      "name": "D2Q49c",
+      "num_points": 49,
+      "degree": 11,
+      "max_layer": 5,
+      "spacing": 1.04213322
+    },
+    {
+      "name": "D2Q49d",
+      "num_points": 49,
+      "degree": 11,
+      "max_layer": 5,
+      "spacing": 1.15004777
+    },
+    {
+      "name": "D2Q49e",
+      "num_points": 49,
+      "degree": 11,
+      "max_layer": 5,
+      "spacing": 0.92161012
+    },
+    {
+      "name": "D2Q49f",
+      "num_points": 49,
+      "degree": 11,
+      "max_layer": 5,
+      "spacing": 0.75593681
+    },
+    {
+      "name": "D2Q49g",
+      "num_points": 49,
+      "degree": 11,
+      "max_layer": 5,
+      "spacing": 1.04243468
+    },
+    {
+      "name": "D2Q49h",
+      "num_points": 49,
+      "degree": 11,
+      "max_layer": 5,
+      "spacing": 0.93699205
+    },
+    {
+      "name": "D2Q49i",
+      "num_points": 49,
+      "degree": 11,
+      "max_layer": 5,
+      "spacing": 0.89401908
+    },
+    {
+      "name": "D2Q77",
+      "num_points": 77,
+      "degree": 13,
+      "max_layer": 5,
+      "spacing": 0.9700085
+    },
+    {
+      "name": "D2Q137",
+      "num_points": 137,
+      "degree": 17,
+      "max_layer": 7,
+      "spacing": 0.83692041
+    },
+    {
+      "name": "D2Q205",
+      "num_points": 205,
+      "degree": 21,
+      "max_layer": 9,
+      "spacing": 0.74689486
+    },
+    {
+      "name": "D2Q293",
+      "num_points": 293,
+      "degree": 25,
+      "max_layer": 11,
+      "spacing": 0.68080678
+    },
+    {
+      "name": "D2Q353",
+      "num_points": 353,
+      "degree": 29,
+      "max_layer": 13,
+      "spacing": 0.6296374
+    },
+    {
+      "name": "D2Q413",
+      "num_points": 413,
+      "degree": 33,
+      "max_layer": 15,
+      "spacing": 0.58850475
+    }
+  ],
+  "D3": [
+    {
+      "name": "D3Q15",
+      "num_points": 15,
+      "degree": 8,
+      "max_layer": 7,
+      "spacing": 0.83692041
+    },
+    {
+      "name": "D3Q103",
+      "num_points": 103,
+      "degree": 8,
+      "max_layer": 7,
+      "spacing": 0.83692041
+    },
+    {
+      "name": "D3Q327",
+      "num_points": 327,
+      "degree": 8,
+      "max_layer": 7,
+      "spacing": 0.83692041
+    },
+    {
+      "name": "D3Q675",
+      "num_points": 675,
+      "degree": 8,
+      "max_layer": 7,
+      "spacing": 0.83692041
+    }
+  ]
+}

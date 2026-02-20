@@ -5,6 +5,8 @@ site_url: ""
 
 theme:
   name: material
+  logo: images/logo.svg
+  favicon: images/logo.svg
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -63,6 +65,7 @@ nav:
   - Home: index.md
   - Background: background.md
   - Methods: methods.md
+  - Dataset Usage: dataset.md
   - Lattice Catalog: catalog.md
   - "1D Lattices":
     - lattices/D1Q3.md
