@@ -224,23 +224,23 @@
     {
       "name": "D3Q15",
       "num_points": 15,
-      "degree": 8,
-      "max_layer": 7,
-      "spacing": 0.83692041
+      "degree": 2,
+      "max_layer": 1,
+      "spacing": 1.73205081
     },
     {
       "name": "D3Q103",
       "num_points": 103,
-      "degree": 8,
-      "max_layer": 7,
-      "spacing": 0.83692041
+      "degree": 4,
+      "max_layer": 3,
+      "spacing": 1.19697977
     },
     {
       "name": "D3Q327",
       "num_points": 327,
-      "degree": 8,
-      "max_layer": 7,
-      "spacing": 0.83692041
+      "degree": 6,
+      "max_layer": 5,
+      "spacing": 0.9700085
     },
     {
       "name": "D3Q675",

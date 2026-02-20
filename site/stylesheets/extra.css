@@ -167,6 +167,15 @@
   color: var(--md-accent-fg-color);
 }
 
+/* Dimension row tinting for summary table */
+.lattice-table .row-d1 td { background: rgba(33, 150, 243, 0.06); }
+.lattice-table .row-d2 td { background: rgba(76, 175, 80, 0.06); }
+.lattice-table .row-d3 td { background: rgba(255, 152, 0, 0.06); }
+
+.lattice-table .row-d1:hover td { background: rgba(33, 150, 243, 0.12); }
+.lattice-table .row-d2:hover td { background: rgba(76, 175, 80, 0.12); }
+.lattice-table .row-d3:hover td { background: rgba(255, 152, 0, 0.12); }
+
 /* Responsive */
 @media (max-width: 600px) {
   .hero h1 { font-size: 1.6rem; }
