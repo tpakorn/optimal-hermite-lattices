@@ -64,44 +64,46 @@ extra_javascript:
 nav:
   - Home: index.md
   - Background: background.md
+  - Equilibrium Expansion: equilibrium.md
   - Methods: methods.md
   - Dataset Usage: dataset.md
-  - Lattice Catalog: catalog.md
-  - "1D Lattices":
-    - lattices/D1Q3.md
-    - lattices/D1Q7.md
-    - lattices/D1Q11.md
-    - lattices/D1Q15.md
-    - lattices/D1Q17.md
-    - lattices/D1Q21.md
-    - lattices/D1Q25.md
-    - lattices/D1Q27.md
-    - lattices/D1Q27a.md
-    - lattices/D1Q29.md
-  - "2D Lattices":
-    - lattices/D2Q9.md
-    - lattices/D2Q17a.md
-    - lattices/D2Q17b.md
-    - lattices/D2Q17c.md
-    - lattices/D2Q17d.md
-    - lattices/D2Q37.md
-    - lattices/D2Q49a.md
-    - lattices/D2Q49b.md
-    - lattices/D2Q49c.md
-    - lattices/D2Q49d.md
-    - lattices/D2Q49e.md
-    - lattices/D2Q49f.md
-    - lattices/D2Q49g.md
-    - lattices/D2Q49h.md
-    - lattices/D2Q49i.md
-    - lattices/D2Q77.md
-    - lattices/D2Q137.md
-    - lattices/D2Q205.md
-    - lattices/D2Q293.md
-    - lattices/D2Q353.md
-    - lattices/D2Q413.md
-  - "3D Lattices":
-    - lattices/D3Q15.md
-    - lattices/D3Q103.md
-    - lattices/D3Q327.md
-    - lattices/D3Q675.md
+  - Lattice Catalog:
+    - catalog.md
+    - "1D Lattices":
+      - lattices/D1Q3.md
+      - lattices/D1Q7.md
+      - lattices/D1Q11.md
+      - lattices/D1Q15.md
+      - lattices/D1Q17.md
+      - lattices/D1Q21.md
+      - lattices/D1Q25.md
+      - lattices/D1Q27.md
+      - lattices/D1Q27a.md
+      - lattices/D1Q29.md
+    - "2D Lattices":
+      - lattices/D2Q9.md
+      - lattices/D2Q17a.md
+      - lattices/D2Q17b.md
+      - lattices/D2Q17c.md
+      - lattices/D2Q17d.md
+      - lattices/D2Q37.md
+      - lattices/D2Q49a.md
+      - lattices/D2Q49b.md
+      - lattices/D2Q49c.md
+      - lattices/D2Q49d.md
+      - lattices/D2Q49e.md
+      - lattices/D2Q49f.md
+      - lattices/D2Q49g.md
+      - lattices/D2Q49h.md
+      - lattices/D2Q49i.md
+      - lattices/D2Q77.md
+      - lattices/D2Q137.md
+      - lattices/D2Q205.md
+      - lattices/D2Q293.md
+      - lattices/D2Q353.md
+      - lattices/D2Q413.md
+    - "3D Lattices":
+      - lattices/D3Q15.md
+      - lattices/D3Q103.md
+      - lattices/D3Q327.md
+      - lattices/D3Q675.md
