@@ -12,7 +12,7 @@ $$
 f^{0}(\boldsymbol{\xi}) = \frac{\rho}{(2\pi\theta)^{D/2}}\exp\!\left(-\frac{|\boldsymbol{\xi}-\mathbf{u}|^{2}}{2\theta}\right)
 $$
 
-expanded in the Hermite basis[^3] with weight $\omega(\boldsymbol{\xi}) = (2\pi)^{-D/2}e^{-|\boldsymbol{\xi}|^{2}/2}$, admits the closed-form Laguerre expansion:
+expanded in the Hermite basis with weight $\omega(\boldsymbol{\xi}) = (2\pi)^{-D/2}e^{-|\boldsymbol{\xi}|^{2}/2}$, admits the closed-form Laguerre expansion:
 
 $$
 \boxed{\;
@@ -23,7 +23,7 @@ L_{p}^{(D/2-1)}\!\!\left(\frac{|\boldsymbol{\xi}-\mathbf{u}|^{2}}{2}\right)
 \;}
 $$
 
-Here $L_{p}^{(\alpha)}$ is the generalized Laguerre polynomial[^1][^2], $D$ is the spatial dimension, $\theta = T/T_{\mathrm{ref}}$, and truncation at order $P$ gives accuracy $O((\theta{-}1)^{P+1})$.
+Here $L_{p}^{(\alpha)}$ is the generalized Laguerre polynomial[^1][^2][^3][^4], $D$ is the spatial dimension, $\theta = T/T_{\mathrm{ref}}$, and truncation at order $P$ gives accuracy $O((\theta{-}1)^{P+1})$.
 
 ---
 
@@ -264,4 +264,6 @@ for P in range(7):
 
 [^2]: M. Abramowitz and I. A. Stegun, *Handbook of Mathematical Functions with Formulas, Graphs, and Mathematical Tables*, 10th printing. Washington, DC: National Bureau of Standards, 1972. (Chapter 22: Orthogonal polynomials; §22.2–22.3 for generalized Laguerre polynomials.)
 
-[^3]: X. Shan, X.-F. Yuan, and H. Chen, "Kinetic theory representation of hydrodynamics: a way beyond the Navier–Stokes equation," *J. Fluid Mech.*, vol. 550, pp. 413–441, 2006.
+[^3]: [Laguerre polynomials — Wikipedia](https://en.wikipedia.org/wiki/Laguerre_polynomials). Definition, Rodrigues' formula, orthogonality relations, and generating function for generalized Laguerre polynomials $L_n^{(\alpha)}(x)$.
+
+[^4]: [Associated Laguerre Polynomial — Wolfram MathWorld](https://mathworld.wolfram.com/AssociatedLaguerrePolynomial.html). Closed-form expressions, recurrence relations, and integral representations of the associated (generalized) Laguerre polynomials.

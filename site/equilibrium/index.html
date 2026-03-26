@@ -2111,7 +2111,7 @@
 <div class="arithmatex">\[
 f^{0}(\boldsymbol{\xi}) = \frac{\rho}{(2\pi\theta)^{D/2}}\exp\!\left(-\frac{|\boldsymbol{\xi}-\mathbf{u}|^{2}}{2\theta}\right)
 \]</div>
-<p>expanded in the Hermite basis<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">1</a></sup> with weight <span class="arithmatex">\(\omega(\boldsymbol{\xi}) = (2\pi)^{-D/2}e^{-|\boldsymbol{\xi}|^{2}/2}\)</span>, admits the closed-form Laguerre expansion:</p>
+<p>expanded in the Hermite basis with weight <span class="arithmatex">\(\omega(\boldsymbol{\xi}) = (2\pi)^{-D/2}e^{-|\boldsymbol{\xi}|^{2}/2}\)</span>, admits the closed-form Laguerre expansion:</p>
 <div class="arithmatex">\[
 \boxed{\;
 \frac{f^{0}(\boldsymbol{\xi})}{\omega(\boldsymbol{\xi})\,\rho}
@@ -2120,7 +2120,7 @@ f^{0}(\boldsymbol{\xi}) = \frac{\rho}{(2\pi\theta)^{D/2}}\exp\!\left(-\frac{|\bo
 L_{p}^{(D/2-1)}\!\!\left(\frac{|\boldsymbol{\xi}-\mathbf{u}|^{2}}{2}\right)
 \;}
 \]</div>
-<p>Here <span class="arithmatex">\(L_{p}^{(\alpha)}\)</span> is the generalized Laguerre polynomial<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">2</a></sup><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">3</a></sup>, <span class="arithmatex">\(D\)</span> is the spatial dimension, <span class="arithmatex">\(\theta = T/T_{\mathrm{ref}}\)</span>, and truncation at order <span class="arithmatex">\(P\)</span> gives accuracy <span class="arithmatex">\(O((\theta{-}1)^{P+1})\)</span>.</p>
+<p>Here <span class="arithmatex">\(L_{p}^{(\alpha)}\)</span> is the generalized Laguerre polynomial<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup><sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup><sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>, <span class="arithmatex">\(D\)</span> is the spatial dimension, <span class="arithmatex">\(\theta = T/T_{\mathrm{ref}}\)</span>, and truncation at order <span class="arithmatex">\(P\)</span> gives accuracy <span class="arithmatex">\(O((\theta{-}1)^{P+1})\)</span>.</p>
 <hr />
 <h2 id="explicit-expansion-to-6th-order">Explicit expansion to 6th order<a class="headerlink" href="#explicit-expansion-to-6th-order" title="Permanent link">&para;</a></h2>
 <h3 id="notation">Notation<a class="headerlink" href="#notation" title="Permanent link">&para;</a></h3>
@@ -2291,7 +2291,7 @@ G(\varepsilon) = \sum_{m=0}^{\infty}\frac{(-q)^{m}}{m!}\varepsilon^{m}(1{+}\vare
 C_{p} = (-1)^{p}\sum_{m=0}^{p}\binom{D/2{+}p{-}1}{p{-}m}\frac{q^{m}}{m!}
 = (-1)^{p}L_{p}^{(D/2-1)}\!\bigl(\tfrac{|\boldsymbol{\xi}-\mathbf{u}|^{2}}{2}\bigr)
 \]</div>
-<p>which is precisely the generalized Laguerre polynomial<sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">2</a></sup>.</p>
+<p>which is precisely the generalized Laguerre polynomial<sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</p>
 </li>
 <li>
 <p><strong>Conclude.</strong> Since <span class="arithmatex">\((-1)^{p}\varepsilon^{p} = (1{-}\theta)^{p}\)</span>, multiplying by <span class="arithmatex">\(e^{s-w/2}\)</span> yields the main result. Convergence: analytic for <span class="arithmatex">\(\varepsilon &gt; -1\)</span> (<span class="arithmatex">\(\theta &gt; 0\)</span>).</p>
@@ -2437,14 +2437,17 @@ C_{p} = (-1)^{p}\sum_{m=0}^{p}\binom{D/2{+}p{-}1}{p{-}m}\frac{q^{m}}{m!}
 <div class="footnote">
 <hr />
 <ol>
-<li id="fn:3">
-<p>X. Shan, X.-F. Yuan, and H. Chen, "Kinetic theory representation of hydrodynamics: a way beyond the Navier–Stokes equation," <em>J. Fluid Mech.</em>, vol. 550, pp. 413–441, 2006.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
 <li id="fn:1">
-<p>G. Szegő, <em>Orthogonal Polynomials</em>, 4th ed., American Mathematical Society Colloquium Publications, vol. 23. Providence, RI: AMS, 1975. (Chapter V: Laguerre and Hermite polynomials.)&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p>G. Szegő, <em>Orthogonal Polynomials</em>, 4th ed., American Mathematical Society Colloquium Publications, vol. 23. Providence, RI: AMS, 1975. (Chapter V: Laguerre and Hermite polynomials.)&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:2">
-<p>M. Abramowitz and I. A. Stegun, <em>Handbook of Mathematical Functions with Formulas, Graphs, and Mathematical Tables</em>, 10th printing. Washington, DC: National Bureau of Standards, 1972. (Chapter 22: Orthogonal polynomials; §22.2–22.3 for generalized Laguerre polynomials.)&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<p>M. Abramowitz and I. A. Stegun, <em>Handbook of Mathematical Functions with Formulas, Graphs, and Mathematical Tables</em>, 10th printing. Washington, DC: National Bureau of Standards, 1972. (Chapter 22: Orthogonal polynomials; §22.2–22.3 for generalized Laguerre polynomials.)&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p><a href="https://en.wikipedia.org/wiki/Laguerre_polynomials">Laguerre polynomials — Wikipedia</a>. Definition, Rodrigues' formula, orthogonality relations, and generating function for generalized Laguerre polynomials <span class="arithmatex">\(L_n^{(\alpha)}(x)\)</span>.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p><a href="https://mathworld.wolfram.com/AssociatedLaguerrePolynomial.html">Associated Laguerre Polynomial — Wolfram MathWorld</a>. Closed-form expressions, recurrence relations, and integral representations of the associated (generalized) Laguerre polynomials.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
