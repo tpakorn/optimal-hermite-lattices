@@ -12,7 +12,7 @@ $$
 f^{0}(\boldsymbol{\xi}) = \frac{\rho}{(2\pi\theta)^{D/2}}\exp\!\left(-\frac{|\boldsymbol{\xi}-\mathbf{u}|^{2}}{2\theta}\right)
 $$
 
-expanded in the Hermite basis with weight $\omega(\boldsymbol{\xi}) = (2\pi)^{-D/2}e^{-|\boldsymbol{\xi}|^{2}/2}$, admits the closed-form Laguerre expansion:
+expanded in the Hermite basis[^3] with weight $\omega(\boldsymbol{\xi}) = (2\pi)^{-D/2}e^{-|\boldsymbol{\xi}|^{2}/2}$, admits the closed-form Laguerre expansion:
 
 $$
 \boxed{\;
@@ -23,7 +23,7 @@ L_{p}^{(D/2-1)}\!\!\left(\frac{|\boldsymbol{\xi}-\mathbf{u}|^{2}}{2}\right)
 \;}
 $$
 
-Here $L_{p}^{(\alpha)}$ is the generalized Laguerre polynomial, $D$ is the spatial dimension, $\theta = T/T_{\mathrm{ref}}$, and truncation at order $P$ gives accuracy $O((\theta{-}1)^{P+1})$.
+Here $L_{p}^{(\alpha)}$ is the generalized Laguerre polynomial[^1][^2], $D$ is the spatial dimension, $\theta = T/T_{\mathrm{ref}}$, and truncation at order $P$ gives accuracy $O((\theta{-}1)^{P+1})$.
 
 ---
 
@@ -105,7 +105,7 @@ Entry $(n,\varepsilon^{k})$ gives $F_{n,k}$; the full expansion is $f^{0}\!/(\om
     = (-1)^{p}L_{p}^{(D/2-1)}\!\bigl(\tfrac{|\boldsymbol{\xi}-\mathbf{u}|^{2}}{2}\bigr)
     $$
 
-    which is precisely the generalized Laguerre polynomial.
+    which is precisely the generalized Laguerre polynomial[^1].
 
 4. **Conclude.** Since $(-1)^{p}\varepsilon^{p} = (1{-}\theta)^{p}$, multiplying by $e^{s-w/2}$ yields the main result. Convergence: analytic for $\varepsilon > -1$ ($\theta > 0$).
 
@@ -258,6 +258,10 @@ for P in range(7):
 
 ---
 
-## Reference
+## References
 
-*"Equilibrium Distribution as Hermite Expansion: General Theory and the Laguerre Representation"* (2026).
+[^1]: G. Szegő, *Orthogonal Polynomials*, 4th ed., American Mathematical Society Colloquium Publications, vol. 23. Providence, RI: AMS, 1975. (Chapter V: Laguerre and Hermite polynomials.)
+
+[^2]: M. Abramowitz and I. A. Stegun, *Handbook of Mathematical Functions with Formulas, Graphs, and Mathematical Tables*, 10th printing. Washington, DC: National Bureau of Standards, 1972. (Chapter 22: Orthogonal polynomials; §22.2–22.3 for generalized Laguerre polynomials.)
+
+[^3]: X. Shan, X.-F. Yuan, and H. Chen, "Kinetic theory representation of hydrodynamics: a way beyond the Navier–Stokes equation," *J. Fluid Mech.*, vol. 550, pp. 413–441, 2006.
